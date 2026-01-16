@@ -57,6 +57,19 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
+        snow: {
+          DEFAULT: "hsl(var(--snow))",
+          foreground: "hsl(var(--snow-foreground))",
+        },
+        forest: {
+          DEFAULT: "hsl(var(--forest))",
+          light: "hsl(var(--forest-light))",
+        },
+        earth: "hsl(var(--earth))",
+        amber: {
+          DEFAULT: "hsl(var(--amber))",
+          dark: "hsl(var(--amber-dark))",
+        },
       },
       borderRadius: {
         lg: "var(--radius)",
