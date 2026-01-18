@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Snowflake, TreeDeciduous } from "lucide-react";
 import heroImage from "@/assets/hero-landscaping.jpg";
@@ -70,9 +71,11 @@ const Hero = () => {
               Get Free Estimate
               <ArrowRight className="ml-2 w-5 h-5" />
             </Button>
-            <Button size="lg" variant="outline" className="text-lg px-8 bg-primary-foreground/10 border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/20">
-              View Our Work
-            </Button>
+            <Link to="/services">
+              <Button size="lg" variant="outline" className="text-lg px-8 bg-primary-foreground/10 border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/20">
+                View Our Services
+              </Button>
+            </Link>
           </motion.div>
 
           {/* Trust Indicators */}
