@@ -10,61 +10,20 @@ import {
   Home,
   HardHat,
   Pickaxe,
-  Construction
+  Construction,
+  Layers,
+  Shield,
+  Droplets
 } from "lucide-react";
 import { Link } from "react-router-dom";
-import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import landscapingImage from "@/assets/landscaping-service.jpg";
 import snowImage from "@/assets/snow-removal.jpg";
-
-const services = [
-  {
-    icon: TreeDeciduous,
-    title: "Landscaping",
-    description: "Complete landscape design, installation, and maintenance. From gardens to hardscapes, we create beautiful outdoor spaces.",
-    features: ["Landscape Design", "Planting & Gardens", "Hardscape Installation", "Irrigation Systems"],
-  },
-  {
-    icon: Construction,
-    title: "Concrete",
-    description: "Professional concrete services for driveways, patios, walkways, and foundations. Quality work that lasts.",
-    features: ["Driveways", "Patios & Walkways", "Foundations", "Decorative Concrete"],
-  },
-  {
-    icon: Truck,
-    title: "Asphalt",
-    description: "Expert asphalt paving and repair for driveways, parking lots, and roadways. Durable surfaces built to last.",
-    features: ["Paving", "Seal Coating", "Crack Repair", "Resurfacing"],
-  },
-  {
-    icon: Pickaxe,
-    title: "Excavation",
-    description: "Land clearing, grading, and excavation services for construction projects of all sizes.",
-    features: ["Site Preparation", "Land Clearing", "Grading", "Trenching"],
-  },
-  {
-    icon: Snowflake,
-    title: "Snow Removal",
-    description: "Reliable 24/7 snow plowing and ice management. Keep your property safe and accessible all winter.",
-    features: ["Snow Plowing", "Salting & Sanding", "Sidewalk Clearing", "Emergency Response"],
-  },
-];
-
-const containerVariants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: { staggerChildren: 0.1 },
-  },
-};
-
-const itemVariants = {
-  hidden: { opacity: 0, y: 20 },
-  visible: { opacity: 1, y: 0 },
-};
+import concreteImage from "@/assets/concrete-service.jpg";
+import asphaltImage from "@/assets/asphalt-service.jpg";
+import excavationImage from "@/assets/excavation-service.jpg";
 
 const ServicesPage = () => {
   return (
@@ -105,46 +64,7 @@ const ServicesPage = () => {
           </div>
         </section>
 
-        {/* Services Grid */}
-        <section className="py-20 md:py-32">
-          <div className="container mx-auto px-4">
-            <motion.div
-              variants={containerVariants}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
-            >
-              {services.map((service, index) => (
-                <motion.div key={index} variants={itemVariants}>
-                  <Card className="h-full border-border hover:border-primary/50 transition-colors">
-                    <CardContent className="p-6">
-                      <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mb-4">
-                        <service.icon className="w-7 h-7 text-primary" />
-                      </div>
-                      <h3 className="text-xl font-bold text-foreground mb-2">
-                        {service.title}
-                      </h3>
-                      <p className="text-muted-foreground mb-4">
-                        {service.description}
-                      </p>
-                      <ul className="space-y-2">
-                        {service.features.map((feature, idx) => (
-                          <li key={idx} className="flex items-center gap-2 text-sm text-muted-foreground">
-                            <div className="w-1.5 h-1.5 rounded-full bg-accent" />
-                            {feature}
-                          </li>
-                        ))}
-                      </ul>
-                    </CardContent>
-                  </Card>
-                </motion.div>
-              ))}
-            </motion.div>
-          </div>
-        </section>
-
-        {/* Landscaping Highlight */}
+        {/* Landscaping Service */}
         <section className="py-20 bg-secondary">
           <div className="container mx-auto px-4">
             <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -214,7 +134,7 @@ const ServicesPage = () => {
           </div>
         </section>
 
-        {/* Snow Removal Highlight */}
+        {/* Concrete Service */}
         <section className="py-20">
           <div className="container mx-auto px-4">
             <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -224,6 +144,231 @@ const ServicesPage = () => {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6 }}
                 className="lg:order-2"
+              >
+                <span className="text-accent font-semibold tracking-wide uppercase text-sm">
+                  Built to Last
+                </span>
+                <h2 className="text-3xl md:text-4xl font-bold text-foreground mt-2 mb-4">
+                  Professional Concrete Work
+                </h2>
+                <p className="text-muted-foreground text-lg mb-6">
+                  From driveways to foundations, patios to walkways—our concrete services 
+                  deliver quality craftsmanship that stands the test of time.
+                </p>
+                <div className="grid sm:grid-cols-2 gap-4 mb-6">
+                  <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 rounded-lg bg-earth/20 flex items-center justify-center">
+                      <Construction className="w-5 h-5 text-earth" />
+                    </div>
+                    <span className="text-foreground font-medium">Driveways</span>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 rounded-lg bg-earth/20 flex items-center justify-center">
+                      <Layers className="w-5 h-5 text-earth" />
+                    </div>
+                    <span className="text-foreground font-medium">Patios & Walkways</span>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 rounded-lg bg-earth/20 flex items-center justify-center">
+                      <Shield className="w-5 h-5 text-earth" />
+                    </div>
+                    <span className="text-foreground font-medium">Foundations</span>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 rounded-lg bg-earth/20 flex items-center justify-center">
+                      <Flower2 className="w-5 h-5 text-earth" />
+                    </div>
+                    <span className="text-foreground font-medium">Decorative Concrete</span>
+                  </div>
+                </div>
+                <Link to="/contact">
+                  <Button variant="default" size="lg">
+                    Get a Free Quote
+                  </Button>
+                </Link>
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, x: 30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6 }}
+                className="relative rounded-2xl overflow-hidden aspect-[4/3] lg:order-1"
+              >
+                <img
+                  src={concreteImage}
+                  alt="Concrete services"
+                  className="w-full h-full object-cover"
+                />
+              </motion.div>
+            </div>
+          </div>
+        </section>
+
+        {/* Asphalt Service */}
+        <section className="py-20 bg-secondary">
+          <div className="container mx-auto px-4">
+            <div className="grid lg:grid-cols-2 gap-12 items-center">
+              <motion.div
+                initial={{ opacity: 0, x: -30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6 }}
+                className="relative rounded-2xl overflow-hidden aspect-[4/3]"
+              >
+                <img
+                  src={asphaltImage}
+                  alt="Asphalt paving services"
+                  className="w-full h-full object-cover"
+                />
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, x: 30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6 }}
+              >
+                <span className="text-accent font-semibold tracking-wide uppercase text-sm">
+                  Smooth Surfaces
+                </span>
+                <h2 className="text-3xl md:text-4xl font-bold text-foreground mt-2 mb-4">
+                  Expert Asphalt Paving
+                </h2>
+                <p className="text-muted-foreground text-lg mb-6">
+                  Quality asphalt paving and repair for driveways, parking lots, and roadways. 
+                  We build durable surfaces that handle heavy traffic and harsh weather.
+                </p>
+                <div className="grid sm:grid-cols-2 gap-4 mb-6">
+                  <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 rounded-lg bg-foreground/10 flex items-center justify-center">
+                      <Truck className="w-5 h-5 text-foreground" />
+                    </div>
+                    <span className="text-foreground font-medium">Paving</span>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 rounded-lg bg-foreground/10 flex items-center justify-center">
+                      <Shield className="w-5 h-5 text-foreground" />
+                    </div>
+                    <span className="text-foreground font-medium">Seal Coating</span>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 rounded-lg bg-foreground/10 flex items-center justify-center">
+                      <Construction className="w-5 h-5 text-foreground" />
+                    </div>
+                    <span className="text-foreground font-medium">Crack Repair</span>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 rounded-lg bg-foreground/10 flex items-center justify-center">
+                      <Layers className="w-5 h-5 text-foreground" />
+                    </div>
+                    <span className="text-foreground font-medium">Resurfacing</span>
+                  </div>
+                </div>
+                <Link to="/contact">
+                  <Button variant="default" size="lg">
+                    Get a Free Quote
+                  </Button>
+                </Link>
+              </motion.div>
+            </div>
+          </div>
+        </section>
+
+        {/* Excavation Service */}
+        <section className="py-20">
+          <div className="container mx-auto px-4">
+            <div className="grid lg:grid-cols-2 gap-12 items-center">
+              <motion.div
+                initial={{ opacity: 0, x: -30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6 }}
+                className="lg:order-2"
+              >
+                <span className="text-accent font-semibold tracking-wide uppercase text-sm">
+                  Ground Work
+                </span>
+                <h2 className="text-3xl md:text-4xl font-bold text-foreground mt-2 mb-4">
+                  Professional Excavation
+                </h2>
+                <p className="text-muted-foreground text-lg mb-6">
+                  Land clearing, grading, and excavation services for construction projects 
+                  of all sizes. We prepare your site for success.
+                </p>
+                <div className="grid sm:grid-cols-2 gap-4 mb-6">
+                  <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 rounded-lg bg-amber/20 flex items-center justify-center">
+                      <Pickaxe className="w-5 h-5 text-amber" />
+                    </div>
+                    <span className="text-foreground font-medium">Site Preparation</span>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 rounded-lg bg-amber/20 flex items-center justify-center">
+                      <TreeDeciduous className="w-5 h-5 text-amber" />
+                    </div>
+                    <span className="text-foreground font-medium">Land Clearing</span>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 rounded-lg bg-amber/20 flex items-center justify-center">
+                      <Layers className="w-5 h-5 text-amber" />
+                    </div>
+                    <span className="text-foreground font-medium">Grading</span>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 rounded-lg bg-amber/20 flex items-center justify-center">
+                      <Droplets className="w-5 h-5 text-amber" />
+                    </div>
+                    <span className="text-foreground font-medium">Trenching</span>
+                  </div>
+                </div>
+                <Link to="/contact">
+                  <Button variant="default" size="lg">
+                    Get a Free Quote
+                  </Button>
+                </Link>
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, x: 30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6 }}
+                className="relative rounded-2xl overflow-hidden aspect-[4/3] lg:order-1"
+              >
+                <img
+                  src={excavationImage}
+                  alt="Excavation services"
+                  className="w-full h-full object-cover"
+                />
+              </motion.div>
+            </div>
+          </div>
+        </section>
+
+        {/* Snow Removal Service */}
+        <section className="py-20 bg-secondary">
+          <div className="container mx-auto px-4">
+            <div className="grid lg:grid-cols-2 gap-12 items-center">
+              <motion.div
+                initial={{ opacity: 0, x: -30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6 }}
+                className="relative rounded-2xl overflow-hidden aspect-[4/3]"
+              >
+                <img
+                  src={snowImage}
+                  alt="Snow removal service"
+                  className="w-full h-full object-cover"
+                />
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, x: 30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6 }}
               >
                 <span className="text-accent font-semibold tracking-wide uppercase text-sm">
                   Winter Ready
@@ -266,20 +411,6 @@ const ServicesPage = () => {
                     Schedule Service
                   </Button>
                 </Link>
-              </motion.div>
-
-              <motion.div
-                initial={{ opacity: 0, x: 30 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6 }}
-                className="relative rounded-2xl overflow-hidden aspect-[4/3] lg:order-1"
-              >
-                <img
-                  src={snowImage}
-                  alt="Snow removal service"
-                  className="w-full h-full object-cover"
-                />
               </motion.div>
             </div>
           </div>
