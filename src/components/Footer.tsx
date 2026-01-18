@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { TreeDeciduous, Snowflake, Facebook, Instagram, Phone, Mail } from "lucide-react";
 
 const Footer = () => {
@@ -9,12 +10,12 @@ const Footer = () => {
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
           {/* Brand */}
           <div className="lg:col-span-2">
-            <a href="#" className="flex items-center gap-2 mb-4">
+            <Link to="/" className="flex items-center gap-2 mb-4">
               <div className="w-10 h-10 rounded-lg bg-primary-foreground flex items-center justify-center">
                 <span className="text-foreground font-bold text-xl">C</span>
               </div>
               <span className="text-2xl font-bold tracking-tight">Ceelo</span>
-            </a>
+            </Link>
             <p className="text-primary-foreground/70 mb-6 max-w-sm">
               Professional landscaping and snow removal services. Keeping your 
               property beautiful and safe, every season.
@@ -36,24 +37,24 @@ const Footer = () => {
             <h4 className="font-semibold mb-4">Quick Links</h4>
             <ul className="space-y-3">
               <li>
-                <a href="#services" className="text-primary-foreground/70 hover:text-primary-foreground transition-colors">
+                <Link to="/" className="text-primary-foreground/70 hover:text-primary-foreground transition-colors">
+                  Home
+                </Link>
+              </li>
+              <li>
+                <Link to="/services" className="text-primary-foreground/70 hover:text-primary-foreground transition-colors">
                   Services
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#about" className="text-primary-foreground/70 hover:text-primary-foreground transition-colors">
+                <Link to="/about" className="text-primary-foreground/70 hover:text-primary-foreground transition-colors">
                   About Us
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#contact" className="text-primary-foreground/70 hover:text-primary-foreground transition-colors">
+                <Link to="/contact" className="text-primary-foreground/70 hover:text-primary-foreground transition-colors">
                   Contact
-                </a>
-              </li>
-              <li>
-                <a href="#" className="text-primary-foreground/70 hover:text-primary-foreground transition-colors">
-                  Free Quote
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
