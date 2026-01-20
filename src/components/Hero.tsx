@@ -56,7 +56,7 @@ const Hero = () => {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="text-lg md:text-xl text-primary-foreground/80 mb-8 max-w-2xl"
           >
-            From lush summer lawns to cleared winter driveways, Ceelo delivers 
+            From lush summer lawns to cleared winter driveways, Seelo Contracting Inc delivers 
             professional landscaping and snow removal services you can count on.
           </motion.p>
 
@@ -67,10 +67,12 @@ const Hero = () => {
             transition={{ duration: 0.6, delay: 0.3 }}
             className="flex flex-col sm:flex-row gap-4"
           >
-            <Button size="lg" variant="accent" className="text-lg px-8">
-              Get Free Estimate
-              <ArrowRight className="ml-2 w-5 h-5" />
-            </Button>
+            <Link to="/contact">
+              <Button size="lg" variant="accent" className="text-lg px-8">
+                Get Free Estimate
+                <ArrowRight className="ml-2 w-5 h-5" />
+              </Button>
+            </Link>
             <Link to="/services">
               <Button size="lg" variant="outline" className="text-lg px-8 bg-primary-foreground/10 border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/20">
                 View Our Services

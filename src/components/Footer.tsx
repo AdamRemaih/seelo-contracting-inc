@@ -9,9 +9,9 @@ const Footer = () => {
           <div className="lg:col-span-2">
             <Link to="/" className="flex items-center gap-2 mb-4">
               <div className="w-10 h-10 rounded-lg bg-primary-foreground flex items-center justify-center">
-                <span className="text-foreground font-bold text-xl">C</span>
+                <span className="text-foreground font-bold text-xl">S</span>
               </div>
-              <span className="text-2xl font-bold tracking-tight">Seelo Contacting Inc</span>
+              <span className="text-2xl font-bold tracking-tight">Seelo Contracting Inc</span>
             </Link>
             <p className="text-primary-foreground/70 mb-6 max-w-sm">
               Professional landscaping and snow removal services. Keeping your 
@@ -67,9 +67,9 @@ const Footer = () => {
                 </a>
               </li>
               <li>
-                <a href="mailto:info@ceelo.com" className="flex items-center gap-2 text-primary-foreground/70 hover:text-primary-foreground transition-colors">
+                <a href="mailto:info@seelo.com" className="flex items-center gap-2 text-primary-foreground/70 hover:text-primary-foreground transition-colors">
                   <Mail className="w-4 h-4" />
-                  info@ceelo.com
+                  info@seelo.com
                 </a>
               </li>
             </ul>
@@ -85,7 +85,7 @@ const Footer = () => {
         {/* Bottom Bar */}
         <div className="pt-8 border-t border-primary-foreground/10 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-primary-foreground/50 text-sm">
-            © {currentYear} Ceelo. All rights reserved.
+            © {currentYear} Seelo Contracting Inc. All rights reserved.
           </p>
           <p className="text-primary-foreground/50 text-sm">
             Licensed & Insured | Serving the Greater Metro Area
