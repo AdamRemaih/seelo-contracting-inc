@@ -37,9 +37,7 @@ const AboutPage = () => {
           }} transition={{
             duration: 0.6
           }}>
-              <span className="text-accent font-semibold tracking-wide uppercase text-sm">
-                About Seelo
-              </span>
+              <span className="text-accent font-semibold tracking-wide uppercase text-sm">ABOUT SEELO CONTRACTING INC</span>
               <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-primary-foreground mt-2 mb-4">
                 Your Trusted Property Care Partner
               </h1>
