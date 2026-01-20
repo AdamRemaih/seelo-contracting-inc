@@ -88,7 +88,7 @@ const Footer = () => {
             © {currentYear} Seelo Contracting Inc. All rights reserved.
           </p>
           <p className="text-primary-foreground/50 text-sm">
-            Licensed & Insured | Serving the Greater Metro Area
+            Licensed & Insured | Serving Calgary
           </p>
         </div>
       </div>
