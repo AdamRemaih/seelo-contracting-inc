@@ -8,9 +8,7 @@ const Footer = () => {
           {/* Brand */}
           <div className="lg:col-span-2">
             <Link to="/" className="flex items-center gap-2 mb-4">
-              <div className="w-10 h-10 rounded-lg bg-primary-foreground flex items-center justify-center">
-                <span className="text-foreground font-bold text-xl">S</span>
-              </div>
+              
               <span className="text-2xl font-bold tracking-tight">Seelo Contracting Inc</span>
             </Link>
             <p className="text-primary-foreground/70 mb-6 max-w-sm">
