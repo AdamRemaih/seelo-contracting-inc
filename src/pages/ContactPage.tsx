@@ -22,7 +22,7 @@ const contactInfo = [
   {
     icon: MapPin,
     title: "Service Area",
-    value: "Greater Metro Area",
+    value: "Calgary",
   },
   {
     icon: Clock,
