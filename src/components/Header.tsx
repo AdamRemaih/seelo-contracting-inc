@@ -3,20 +3,23 @@ import { Link, useLocation } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
-
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
   const location = useLocation();
-
-  const navLinks = [
-    { href: "/", label: "Home" },
-    { href: "/services", label: "Services" },
-    { href: "/about", label: "About" },
-    { href: "/contact", label: "Contact" },
-  ];
-
-  return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border">
+  const navLinks = [{
+    href: "/",
+    label: "Home"
+  }, {
+    href: "/services",
+    label: "Services"
+  }, {
+    href: "/about",
+    label: "About"
+  }, {
+    href: "/contact",
+    label: "Contact"
+  }];
+  return <header className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
@@ -24,26 +27,15 @@ const Header = () => {
             <div className="w-10 h-10 rounded-lg bg-primary flex items-center justify-center">
               <span className="text-primary-foreground font-bold text-xl">C</span>
             </div>
-            <span className="text-2xl font-bold text-foreground tracking-tight">
-              Ceelo
-            </span>
+            <span className="text-2xl font-bold text-foreground tracking-tight">Seelo Contracting Inc
+          </span>
           </Link>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center gap-8">
-            {navLinks.map((link) => (
-              <Link
-                key={link.href}
-                to={link.href}
-                className={`font-medium transition-colors ${
-                  location.pathname === link.href
-                    ? "text-primary"
-                    : "text-muted-foreground hover:text-foreground"
-                }`}
-              >
+            {navLinks.map(link => <Link key={link.href} to={link.href} className={`font-medium transition-colors ${location.pathname === link.href ? "text-primary" : "text-muted-foreground hover:text-foreground"}`}>
                 {link.label}
-              </Link>
-            ))}
+              </Link>)}
           </nav>
 
           {/* CTA Button */}
@@ -60,11 +52,7 @@ const Header = () => {
           </div>
 
           {/* Mobile Menu Button */}
-          <button
-            onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden p-2 text-foreground"
-            aria-label="Toggle menu"
-          >
+          <button onClick={() => setIsOpen(!isOpen)} className="md:hidden p-2 text-foreground" aria-label="Toggle menu">
             {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
         </div>
@@ -72,28 +60,20 @@ const Header = () => {
 
       {/* Mobile Menu */}
       <AnimatePresence>
-        {isOpen && (
-          <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: "auto" }}
-            exit={{ opacity: 0, height: 0 }}
-            className="md:hidden bg-background border-b border-border"
-          >
+        {isOpen && <motion.div initial={{
+        opacity: 0,
+        height: 0
+      }} animate={{
+        opacity: 1,
+        height: "auto"
+      }} exit={{
+        opacity: 0,
+        height: 0
+      }} className="md:hidden bg-background border-b border-border">
             <nav className="container mx-auto px-4 py-4 flex flex-col gap-4">
-              {navLinks.map((link) => (
-                <Link
-                  key={link.href}
-                  to={link.href}
-                  onClick={() => setIsOpen(false)}
-                  className={`font-medium py-2 ${
-                    location.pathname === link.href
-                      ? "text-primary"
-                      : "text-foreground"
-                  }`}
-                >
+              {navLinks.map(link => <Link key={link.href} to={link.href} onClick={() => setIsOpen(false)} className={`font-medium py-2 ${location.pathname === link.href ? "text-primary" : "text-foreground"}`}>
                   {link.label}
-                </Link>
-              ))}
+                </Link>)}
               <a href="tel:+1234567890" className="flex items-center gap-2 text-muted-foreground py-2">
                 <Phone className="w-4 h-4" />
                 <span className="font-medium">(123) 456-7890</span>
@@ -104,11 +84,8 @@ const Header = () => {
                 </Button>
               </Link>
             </nav>
-          </motion.div>
-        )}
+          </motion.div>}
       </AnimatePresence>
-    </header>
-  );
+    </header>;
 };
-
 export default Header;

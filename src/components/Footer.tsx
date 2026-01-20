@@ -1,11 +1,8 @@
 import { Link } from "react-router-dom";
 import { TreeDeciduous, Snowflake, Facebook, Instagram, Phone, Mail } from "lucide-react";
-
 const Footer = () => {
   const currentYear = new Date().getFullYear();
-
-  return (
-    <footer className="bg-foreground text-primary-foreground">
+  return <footer className="bg-foreground text-primary-foreground">
       <div className="container mx-auto px-4 py-12 md:py-16">
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
           {/* Brand */}
@@ -14,7 +11,7 @@ const Footer = () => {
               <div className="w-10 h-10 rounded-lg bg-primary-foreground flex items-center justify-center">
                 <span className="text-foreground font-bold text-xl">C</span>
               </div>
-              <span className="text-2xl font-bold tracking-tight">Ceelo</span>
+              <span className="text-2xl font-bold tracking-tight">Seelo Contacting Inc</span>
             </Link>
             <p className="text-primary-foreground/70 mb-6 max-w-sm">
               Professional landscaping and snow removal services. Keeping your 
@@ -77,18 +74,10 @@ const Footer = () => {
               </li>
             </ul>
             <div className="flex items-center gap-4 mt-6">
-              <a
-                href="#"
-                className="w-10 h-10 rounded-full bg-primary-foreground/10 flex items-center justify-center hover:bg-primary-foreground/20 transition-colors"
-                aria-label="Facebook"
-              >
+              <a href="#" className="w-10 h-10 rounded-full bg-primary-foreground/10 flex items-center justify-center hover:bg-primary-foreground/20 transition-colors" aria-label="Facebook">
                 <Facebook className="w-5 h-5" />
               </a>
-              <a
-                href="#"
-                className="w-10 h-10 rounded-full bg-primary-foreground/10 flex items-center justify-center hover:bg-primary-foreground/20 transition-colors"
-                aria-label="Instagram"
-              >
+              <a href="#" className="w-10 h-10 rounded-full bg-primary-foreground/10 flex items-center justify-center hover:bg-primary-foreground/20 transition-colors" aria-label="Instagram">
                 <Instagram className="w-5 h-5" />
               </a>
             </div>
@@ -105,8 +94,6 @@ const Footer = () => {
           </p>
         </div>
       </div>
-    </footer>
-  );
+    </footer>;
 };
-
 export default Footer;
