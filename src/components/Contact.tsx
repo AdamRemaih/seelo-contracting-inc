@@ -8,8 +8,8 @@ const contactInfo = [
   {
     icon: Phone,
     title: "Phone",
-    value: "(123) 456-7890",
-    href: "tel:+1234567890",
+    value: "(403) 891-5229",
+    href: "tel:+14038915229",
   },
   {
     icon: Mail,
@@ -88,11 +88,11 @@ const Contact = () => {
                 Available 24/7 during winter storms. Call our emergency line:
               </p>
               <a
-                href="tel:+1234567890"
+                href="tel:+14038915229"
                 className="inline-flex items-center gap-2 text-accent font-semibold text-lg hover:underline"
               >
                 <Phone className="w-5 h-5" />
-                (123) 456-7890
+                (403) 891-5229
               </a>
             </div>
           </motion.div>
@@ -120,7 +120,7 @@ const Contact = () => {
                   <label className="block text-sm font-medium text-foreground mb-2">
                     Phone Number
                   </label>
-                  <Input placeholder="(123) 456-7890" type="tel" />
+                  <Input placeholder="(403) 891-5229" type="tel" />
                 </div>
               </div>
               <div>

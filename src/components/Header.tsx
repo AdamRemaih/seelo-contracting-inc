@@ -37,7 +37,7 @@ const Header = () => {
 
           {/* CTA Button */}
           <div className="hidden md:flex items-center gap-4">
-            <a href="tel:+1234567890" className="flex items-center gap-2 text-muted-foreground hover:text-foreground">
+            <a href="tel:+14038915229" className="flex items-center gap-2 text-muted-foreground hover:text-foreground">
               <Phone className="w-4 h-4" />
               <span className="font-medium">(403) 891-5229</span>
             </a>
@@ -71,9 +71,9 @@ const Header = () => {
               {navLinks.map(link => <Link key={link.href} to={link.href} onClick={() => setIsOpen(false)} className={`font-medium py-2 ${location.pathname === link.href ? "text-primary" : "text-foreground"}`}>
                   {link.label}
                 </Link>)}
-              <a href="tel:+1234567890" className="flex items-center gap-2 text-muted-foreground py-2">
+              <a href="tel:+14038915229" className="flex items-center gap-2 text-muted-foreground py-2">
                 <Phone className="w-4 h-4" />
-                <span className="font-medium">(123) 456-7890</span>
+                <span className="font-medium">(403) 891-5229</span>
               </a>
               <Link to="/contact" onClick={() => setIsOpen(false)}>
                 <Button variant="default" className="w-full mt-2">
