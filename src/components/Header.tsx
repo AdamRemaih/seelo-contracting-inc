@@ -25,7 +25,14 @@ const Header = () => {
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
           <Link to="/" className="flex items-center">
-            <img src={logo} alt="Seelo Contracting Inc" className="h-12 md:h-14 w-auto" />
+            <img 
+              src={logo} 
+              alt="Seelo Contracting Inc" 
+              className="h-12 md:h-14 w-auto object-contain"
+              loading="eager"
+              decoding="sync"
+              fetchPriority="high"
+            />
           </Link>
 
           {/* Desktop Navigation */}
