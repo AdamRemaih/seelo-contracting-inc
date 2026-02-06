@@ -14,8 +14,8 @@ const contactInfo = [
   {
     icon: Mail,
     title: "Email",
-    value: "info@ceelo.com",
-    href: "mailto:info@ceelo.com",
+    value: "info@seelo.ca",
+    href: "mailto:info@seelo.ca",
   },
   {
     icon: MapPin,

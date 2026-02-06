@@ -65,9 +65,9 @@ const Footer = () => {
                 </a>
               </li>
               <li>
-                <a href="mailto:info@seelo.com" className="flex items-center gap-2 text-primary-foreground/70 hover:text-primary-foreground transition-colors">
+                <a href="mailto:info@seelo.ca" className="flex items-center gap-2 text-primary-foreground/70 hover:text-primary-foreground transition-colors">
                   <Mail className="w-4 h-4" />
-                  info@seelo.com
+                  info@seelo.ca
                 </a>
               </li>
             </ul>
