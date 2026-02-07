@@ -9,11 +9,29 @@ import Footer from "@/components/Footer";
 import work1 from "@/assets/work/work-1.jpg";
 import work2 from "@/assets/work/work-2.jpg";
 import work3 from "@/assets/work/work-3.jpg";
+import work4 from "@/assets/work/work-4.jpg";
+import work5 from "@/assets/work/work-5.jpg";
+import work6 from "@/assets/work/work-6.jpg";
+import work7 from "@/assets/work/work-7.jpg";
+import work8 from "@/assets/work/work-8.jpg";
+import work9 from "@/assets/work/work-9.jpg";
+import work10 from "@/assets/work/work-10.jpg";
+import work11 from "@/assets/work/work-11.jpg";
+import work12 from "@/assets/work/work-12.jpg";
 
 const projects = [
   { src: work1, alt: "Concrete slab foundation work", category: "Concrete" },
   { src: work2, alt: "Excavation site preparation", category: "Excavation" },
   { src: work3, alt: "Excavator on job site", category: "Excavation" },
+  { src: work4, alt: "Underground pipe and utility installation", category: "Excavation" },
+  { src: work5, alt: "Stamped concrete patio with fire pit prep", category: "Concrete" },
+  { src: work6, alt: "Bobcat mini excavator on commercial site", category: "Excavation" },
+  { src: work7, alt: "Commercial concrete ramps and walkways", category: "Concrete" },
+  { src: work8, alt: "Courtyard concrete walkway with pergola", category: "Concrete" },
+  { src: work9, alt: "Residential concrete steps and landing", category: "Concrete" },
+  { src: work10, alt: "Asphalt pathway installation", category: "Asphalt" },
+  { src: work11, alt: "Commercial snow removal service", category: "Snow Removal" },
+  { src: work12, alt: "Concrete retaining wall formwork", category: "Concrete" },
 ];
 
 const categories = ["All", ...Array.from(new Set(projects.map((p) => p.category)))];
