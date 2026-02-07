@@ -24,7 +24,7 @@ import work15 from "@/assets/work/work-15.jpg";
 import work16 from "@/assets/work/work-16.jpg";
 import work17 from "@/assets/work/work-17.jpg";
 import work18 from "@/assets/work/work-18.jpg";
-import work19 from "@/assets/work/work-19.jpg";
+
 
 const projects = [
   { src: work1, alt: "Concrete slab foundation work", category: "Concrete" },
@@ -45,7 +45,7 @@ const projects = [
   { src: work16, alt: "Industrial alleyway snow removal", category: "Snow Removal" },
   { src: work17, alt: "Commercial property snow plowing", category: "Snow Removal" },
   { src: work18, alt: "Parking lot snow removal service", category: "Snow Removal" },
-  { src: work19, alt: "Concrete retaining wall rebar and formwork", category: "Concrete" },
+  
 ];
 
 const categories = ["All", ...Array.from(new Set(projects.map((p) => p.category)))];
