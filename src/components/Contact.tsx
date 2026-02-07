@@ -1,8 +1,12 @@
+import { useState } from "react";
 import { motion } from "framer-motion";
 import { Phone, Mail, MapPin, Clock } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
+import { useToast } from "@/hooks/use-toast";
+
+const FORMSPREE_URL = "https://formspree.io/f/xvzbozdd";
 
 const contactInfo = [
   {
@@ -30,10 +34,39 @@ const contactInfo = [
 ];
 
 const Contact = () => {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const { toast } = useToast();
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+
+    const form = e.currentTarget;
+    const formData = new FormData(form);
+
+    try {
+      const response = await fetch(FORMSPREE_URL, {
+        method: "POST",
+        body: formData,
+        headers: { Accept: "application/json" },
+      });
+
+      if (response.ok) {
+        toast({ title: "Message sent!", description: "We'll get back to you within 24 hours." });
+        form.reset();
+      } else {
+        throw new Error("Failed to send");
+      }
+    } catch {
+      toast({ title: "Something went wrong", description: "Please try again or call us directly.", variant: "destructive" });
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   return (
     <section id="contact" className="py-20 md:py-32 bg-background">
       <div className="container mx-auto px-4">
-        {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -53,7 +86,6 @@ const Contact = () => {
         </motion.div>
 
         <div className="grid lg:grid-cols-5 gap-12">
-          {/* Contact Info */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -69,10 +101,7 @@ const Contact = () => {
                 <div>
                   <h4 className="font-semibold text-foreground">{item.title}</h4>
                   {item.href ? (
-                    <a
-                      href={item.href}
-                      className="text-muted-foreground hover:text-primary transition-colors"
-                    >
+                    <a href={item.href} className="text-muted-foreground hover:text-primary transition-colors">
                       {item.value}
                     </a>
                   ) : (
@@ -97,7 +126,6 @@ const Contact = () => {
             </div>
           </motion.div>
 
-          {/* Contact Form */}
           <motion.div
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -108,32 +136,24 @@ const Contact = () => {
             <h3 className="text-xl font-semibold text-foreground mb-6">
               Request a Free Quote
             </h3>
-            <form className="space-y-5">
+            <form onSubmit={handleSubmit} className="space-y-5">
               <div className="grid sm:grid-cols-2 gap-5">
                 <div>
-                  <label className="block text-sm font-medium text-foreground mb-2">
-                    Full Name
-                  </label>
-                  <Input placeholder="John Smith" />
+                  <label className="block text-sm font-medium text-foreground mb-2">Full Name</label>
+                  <Input name="name" placeholder="John Smith" required />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-foreground mb-2">
-                    Phone Number
-                  </label>
-                  <Input placeholder="(403) 891-5229" type="tel" />
+                  <label className="block text-sm font-medium text-foreground mb-2">Phone Number</label>
+                  <Input name="phone" placeholder="(403) 891-5229" type="tel" required />
                 </div>
               </div>
               <div>
-                <label className="block text-sm font-medium text-foreground mb-2">
-                  Email Address
-                </label>
-                <Input placeholder="john@example.com" type="email" />
+                <label className="block text-sm font-medium text-foreground mb-2">Email Address</label>
+                <Input name="email" placeholder="john@example.com" type="email" required />
               </div>
               <div>
-                <label className="block text-sm font-medium text-foreground mb-2">
-                  Service Needed
-                </label>
-                <select className="w-full h-10 px-3 rounded-md border border-input bg-background text-foreground">
+                <label className="block text-sm font-medium text-foreground mb-2">Service Needed</label>
+                <select name="service" className="w-full h-10 px-3 rounded-md border border-input bg-background text-foreground" required>
                   <option value="">Select a service</option>
                   <option value="landscaping">Landscaping</option>
                   <option value="lawn-care">Lawn Care</option>
@@ -143,16 +163,11 @@ const Contact = () => {
                 </select>
               </div>
               <div>
-                <label className="block text-sm font-medium text-foreground mb-2">
-                  Message
-                </label>
-                <Textarea
-                  placeholder="Tell us about your project..."
-                  rows={4}
-                />
+                <label className="block text-sm font-medium text-foreground mb-2">Message</label>
+                <Textarea name="message" placeholder="Tell us about your project..." rows={4} required />
               </div>
-              <Button variant="default" size="lg" className="w-full">
-                Submit Request
+              <Button variant="default" size="lg" className="w-full" type="submit" disabled={isSubmitting}>
+                {isSubmitting ? "Sending..." : "Submit Request"}
               </Button>
             </form>
           </motion.div>
