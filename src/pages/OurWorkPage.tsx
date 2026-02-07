@@ -18,6 +18,13 @@ import work9 from "@/assets/work/work-9.jpg";
 import work10 from "@/assets/work/work-10.jpg";
 import work11 from "@/assets/work/work-11.jpg";
 import work12 from "@/assets/work/work-12.jpg";
+import work13 from "@/assets/work/work-13.jpg";
+import work14 from "@/assets/work/work-14.jpg";
+import work15 from "@/assets/work/work-15.jpg";
+import work16 from "@/assets/work/work-16.jpg";
+import work17 from "@/assets/work/work-17.jpg";
+import work18 from "@/assets/work/work-18.jpg";
+import work19 from "@/assets/work/work-19.jpg";
 
 const projects = [
   { src: work1, alt: "Concrete slab foundation work", category: "Concrete" },
@@ -32,6 +39,13 @@ const projects = [
   { src: work10, alt: "Asphalt pathway installation", category: "Asphalt" },
   { src: work11, alt: "Commercial snow removal service", category: "Snow Removal" },
   { src: work12, alt: "Concrete retaining wall formwork", category: "Concrete" },
+  { src: work13, alt: "Asphalt patch repair with roller", category: "Asphalt" },
+  { src: work14, alt: "Fresh asphalt strip repair", category: "Asphalt" },
+  { src: work15, alt: "Commercial parking lot snow clearing", category: "Snow Removal" },
+  { src: work16, alt: "Industrial alleyway snow removal", category: "Snow Removal" },
+  { src: work17, alt: "Commercial property snow plowing", category: "Snow Removal" },
+  { src: work18, alt: "Parking lot snow removal service", category: "Snow Removal" },
+  { src: work19, alt: "Concrete retaining wall rebar and formwork", category: "Concrete" },
 ];
 
 const categories = ["All", ...Array.from(new Set(projects.map((p) => p.category)))];
