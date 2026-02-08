@@ -88,6 +88,9 @@ const Footer = () => {
           <p className="text-primary-foreground/50 text-sm">
             Licensed & Insured | Serving Calgary
           </p>
+          <p className="text-primary-foreground/50 text-sm">
+            Designed & Developed by Adam Remaih
+          </p>
         </div>
       </div>
     </footer>;
